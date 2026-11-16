@@ -1,0 +1,652 @@
+{
+  "engine": "NEXUS GAME ENGINE",
+  "formatVersion": "1.0.0",
+  "portal": "playgama",
+  "name": "Plataforma Nexus (Ejemplo)",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "orientation": "horizontal",
+    "backgroundColor": "#131b2e"
+  },
+  "initialSceneId": "scene_2a20e8e2de28",
+  "activeSceneId": "scene_2a20e8e2de28",
+  "scenes": [
+    {
+      "id": "scene_2a20e8e2de28",
+      "name": "Nivel_01",
+      "backgroundColor": "#131b2e",
+      "gridVisible": true,
+      "gridSize": 32,
+      "snapToGrid": false,
+      "mechanics": [
+        {
+          "id": "mech_f11d45cf688a",
+          "name": "Recoger Gema_Animada",
+          "enabled": true,
+          "priority": 10,
+          "ownerObjectId": "obj_82794330c6e4",
+          "trigger": {
+            "event": "collision.enter",
+            "sourceObjectId": "obj_da67cecb0cab",
+            "target": "obj_82794330c6e4"
+          },
+          "conditions": [
+            {
+              "id": "cond_264a316174a5",
+              "type": "object.visible",
+              "target": "obj_82794330c6e4",
+              "value": true
+            }
+          ],
+          "actions": [
+            {
+              "id": "act_0aa3658500fe",
+              "type": "variable.add",
+              "parameters": {
+                "variable": "puntos",
+                "amount": 50
+              }
+            },
+            {
+              "id": "act_7d58f8f73c7c",
+              "type": "audio.beep",
+              "parameters": {
+                "preset": "coin",
+                "channel": "sfx"
+              }
+            },
+            {
+              "id": "act_c5d9ca9e1f38",
+              "type": "particles.burst",
+              "parameters": {
+                "target": "obj_82794330c6e4",
+                "color": "#34d399",
+                "count": 14
+              }
+            },
+            {
+              "id": "act_0f582be2b7c3",
+              "type": "object.destroy",
+              "parameters": {
+                "target": "obj_82794330c6e4"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mech_419a3cfc5b4e",
+          "name": "Sonido de salto del héroe",
+          "enabled": true,
+          "priority": 5,
+          "ownerObjectId": "obj_da67cecb0cab",
+          "trigger": {
+            "event": "input.pressed",
+            "key": "Space"
+          },
+          "conditions": [
+            {
+              "id": "cond_3da2b91c2d24",
+              "type": "object.grounded",
+              "target": "obj_da67cecb0cab",
+              "value": true
+            }
+          ],
+          "actions": [
+            {
+              "id": "act_fc33132cb592",
+              "type": "audio.beep",
+              "parameters": {
+                "preset": "jump",
+                "channel": "sfx"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mech_bd6918ccb564",
+          "name": "Nueva regla 3",
+          "enabled": true,
+          "priority": 10,
+          "conditionCombinator": "all",
+          "ownerObjectId": "obj_82794330c6e4",
+          "trigger": {
+            "event": "scene.start",
+            "sourceObjectId": "obj_da67cecb0cab",
+            "target": "obj_82794330c6e4"
+          },
+          "conditions": [
+            {
+              "id": "cond_092b98a7a393",
+              "type": "object.visible",
+              "target": "obj_da67cecb0cab",
+              "value": true
+            }
+          ],
+          "actions": []
+        }
+      ],
+      "objects": [
+        {
+          "id": "obj_2dc8af5b91af",
+          "name": "Mapa_Plataformas",
+          "type": "tilemap",
+          "parentId": null,
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": -5.87,
+            "y": 13.22,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 1280,
+            "height": 704,
+            "anchorX": 0,
+            "anchorY": 0
+          },
+          "tilemap": {
+            "assetId": "asset_ffb5be4debdb",
+            "tileWidth": 32,
+            "tileHeight": 32,
+            "cols": 40,
+            "rows": 22,
+            "tilesetCols": 4,
+            "tilesetRows": 2,
+            "selectedTileIndex": 1,
+            "cells": {
+              "11,13": 1,
+              "12,13": 1,
+              "13,13": 1,
+              "14,13": 1,
+              "15,13": 1,
+              "16,13": 1,
+              "11,14": 5,
+              "12,14": 5,
+              "13,14": 5,
+              "14,14": 5,
+              "15,14": 5,
+              "16,14": 5,
+              "9,16": 5,
+              "10,16": 5,
+              "10,17": 5,
+              "9,17": 5,
+              "8,17": 5,
+              "8,16": 5,
+              "0,21": 6,
+              "1,21": 6,
+              "2,21": 6,
+              "3,21": 6,
+              "4,21": 6,
+              "5,21": 6,
+              "6,21": 6,
+              "7,21": 6,
+              "8,21": 6,
+              "9,21": 6,
+              "10,21": 6,
+              "11,21": 6,
+              "12,21": 6,
+              "13,21": 6,
+              "14,21": 6,
+              "15,21": 6,
+              "16,21": 6,
+              "39,21": 6,
+              "38,21": 6,
+              "37,21": 6,
+              "33,21": 6,
+              "31,21": 6,
+              "30,21": 6,
+              "29,20": 6,
+              "28,20": 6,
+              "27,20": 6,
+              "26,20": 6,
+              "25,20": 6,
+              "24,20": 6,
+              "23,20": 6,
+              "22,20": 6,
+              "21,20": 6,
+              "20,21": 6,
+              "19,21": 6,
+              "18,21": 6,
+              "17,21": 6,
+              "21,21": 6,
+              "22,21": 6,
+              "23,21": 6,
+              "24,21": 6,
+              "25,21": 6,
+              "26,21": 6,
+              "27,21": 6,
+              "28,21": 6,
+              "29,21": 6,
+              "32,21": 6,
+              "36,21": 6,
+              "35,21": 6,
+              "34,21": 6,
+              "30,20": 6,
+              "31,20": 6,
+              "32,20": 6,
+              "33,20": 6,
+              "34,20": 6,
+              "35,20": 6,
+              "36,20": 6,
+              "37,20": 6,
+              "38,20": 6,
+              "39,20": 6,
+              "20,20": 6,
+              "19,20": 6,
+              "18,20": 6,
+              "17,20": 6,
+              "16,20": 6,
+              "15,20": 6,
+              "14,20": 6,
+              "13,20": 6,
+              "12,20": 6,
+              "11,20": 6,
+              "10,20": 6,
+              "9,20": 6,
+              "9,19": 0,
+              "8,19": 0,
+              "7,19": 0,
+              "6,19": 0,
+              "5,19": 0,
+              "4,19": 0,
+              "3,19": 0,
+              "3,20": 6,
+              "2,20": 6,
+              "1,20": 6,
+              "0,20": 6,
+              "7,20": 6,
+              "8,20": 6,
+              "6,20": 6,
+              "5,20": 6,
+              "4,20": 6,
+              "10,18": 0,
+              "10,19": 0,
+              "2,19": 0
+            }
+          },
+          "components": [
+            {
+              "id": "cmp_0789fc35bfe0",
+              "type": "solid",
+              "enabled": true,
+              "config": {}
+            }
+          ]
+        },
+        {
+          "id": "obj_da67cecb0cab",
+          "name": "Heroe",
+          "type": "sprite",
+          "parentId": null,
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": 416.24,
+            "y": 313.39,
+            "rotation": 0,
+            "scaleX": 1.56,
+            "scaleY": 4.701,
+            "width": 86,
+            "height": 46,
+            "anchorX": 0.5,
+            "anchorY": 0.5
+          },
+          "sprite": {
+            "assetId": "asset_2f2e58a0494c",
+            "tint": "#ffffff",
+            "flipX": false,
+            "flipY": false,
+            "animation": {
+              "enabled": true,
+              "cols": 4,
+              "rows": 1,
+              "frameCount": 4,
+              "fps": 8,
+              "loop": true,
+              "playing": true,
+              "linkToMovement": true,
+              "activeClip": "idle",
+              "clips": [
+                {
+                  "id": "clip_7590dba77c58",
+                  "name": "idle",
+                  "startFrame": 0,
+                  "frameCount": 1,
+                  "fps": 4,
+                  "loop": true
+                },
+                {
+                  "id": "clip_c2a2a3860144",
+                  "name": "walk",
+                  "startFrame": 0,
+                  "frameCount": 4,
+                  "fps": 8,
+                  "loop": true
+                }
+              ]
+            },
+            "fitMode": "stretch",
+            "sampling": "nearest",
+            "aspectLocked": true
+          },
+          "components": [
+            {
+              "id": "cmp_b0b671e7cfa7",
+              "type": "player_platformer",
+              "enabled": true,
+              "config": {
+                "speed": 290,
+                "jumpForce": 580,
+                "gravity": 1350
+              }
+            }
+          ],
+          "layer": "Default"
+        },
+        {
+          "id": "obj_82794330c6e4",
+          "name": "Gema_Animada",
+          "type": "sprite",
+          "parentId": null,
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": 782.94,
+            "y": 384,
+            "rotation": 0,
+            "scaleX": 3.431,
+            "scaleY": 3.768,
+            "width": 64,
+            "height": 35,
+            "anchorX": 0.5,
+            "anchorY": 0.5
+          },
+          "sprite": {
+            "assetId": "asset_7369ff1d8d72",
+            "tint": "#ffffff",
+            "flipX": false,
+            "flipY": false,
+            "animation": {
+              "enabled": true,
+              "cols": 4,
+              "rows": 1,
+              "frameCount": 4,
+              "fps": 8,
+              "loop": true,
+              "playing": true
+            },
+            "fitMode": "contain"
+          },
+          "components": [
+            {
+              "id": "cmp_45ef4aeb8308",
+              "type": "collectible",
+              "enabled": true,
+              "config": {
+                "points": 50
+              }
+            }
+          ],
+          "particleEmitter": {
+            "enabled": false,
+            "preset": "fire",
+            "rate": 30,
+            "maxParticles": 100,
+            "speedMin": 40,
+            "speedMax": 110,
+            "angleDeg": -90,
+            "spreadDeg": 36,
+            "gravity": -40,
+            "sizeStart": 8,
+            "sizeEnd": 2,
+            "lifetime": 0.65,
+            "colorStart": "#facc15",
+            "colorEnd": "#ef4444",
+            "blendAlpha": 0.9
+          },
+          "tweens": []
+        },
+        {
+          "id": "obj_943d3f3f9586",
+          "name": "Dron_Patrulla",
+          "type": "sprite",
+          "parentId": null,
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": 977.61,
+            "y": 220.77,
+            "rotation": 0,
+            "scaleX": 5.607,
+            "scaleY": 5.893,
+            "width": 72,
+            "height": 39,
+            "anchorX": 0.5,
+            "anchorY": 0.5
+          },
+          "sprite": {
+            "assetId": "asset_959a751b68b1",
+            "tint": "#ffffff",
+            "flipX": true,
+            "flipY": false,
+            "fitMode": "contain",
+            "animation": {
+              "enabled": true,
+              "cols": 4,
+              "rows": 1,
+              "frameCount": 4,
+              "fps": 4,
+              "loop": true,
+              "playing": true,
+              "linkToMovement": true
+            },
+            "aspectLocked": true
+          },
+          "components": [
+            {
+              "id": "cmp_aa0233e6988c",
+              "type": "patrol",
+              "enabled": true,
+              "config": {
+                "axis": "x",
+                "distance": 150,
+                "speed": 120
+              }
+            },
+            {
+              "id": "comp_649781e8f28b",
+              "type": "juice.auto_flip_velocity",
+              "enabled": true,
+              "config": {
+                "threshold": 5
+              }
+            },
+            {
+              "id": "comp_f66478f5d402",
+              "type": "ai.fsm_enemy",
+              "enabled": true,
+              "config": {
+                "patrolDistance": 120,
+                "patrolSpeed": 85,
+                "chaseSpeed": 175,
+                "detectRadius": 360,
+                "attackRange": 64,
+                "attackDamage": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "obj_af612f78a3ff",
+          "name": "Interfaz_HUD",
+          "type": "container",
+          "parentId": null,
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 340,
+            "height": 64,
+            "anchorX": 0,
+            "anchorY": 0
+          },
+          "components": []
+        },
+        {
+          "id": "obj_407988720315",
+          "name": "Titulo_Nivel",
+          "type": "text",
+          "parentId": "obj_af612f78a3ff",
+          "visible": true,
+          "locked": false,
+          "opacity": 1,
+          "transform": {
+            "x": 200,
+            "y": 48,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "width": 340,
+            "height": 44,
+            "anchorX": 0.5,
+            "anchorY": 0.5
+          },
+          "text": {
+            "text": "NIVEL 01 · SECTOR NEXUS",
+            "fontSize": 22,
+            "fontFamily": "Plus Jakarta Sans",
+            "color": "#e2e8f0",
+            "fontWeight": "bold",
+            "align": "left"
+          },
+          "components": []
+        }
+      ]
+    }
+  ],
+  "prefabs": [],
+  "folders": [],
+  "variables": [
+    {
+      "id": "var_8b168e633830",
+      "name": "puntos",
+      "scope": "global",
+      "type": "number",
+      "initialValue": 0
+    }
+  ],
+  "audioBuses": {
+    "master": 0.85,
+    "music": 0.7,
+    "sfx": 0.9,
+    "ui": 0.8,
+    "muted": {
+      "master": false,
+      "music": false,
+      "sfx": false,
+      "ui": false
+    }
+  },
+  "assets": [
+    {
+      "id": "asset_sample_hero",
+      "name": "heroe_walk_4f",
+      "filename": "heroe_walk_4f.svg",
+      "mimeType": "image/svg+xml",
+      "kind": "image",
+      "width": 384,
+      "height": 96,
+      "path": "assets/asset_sample_hero_heroe_walk_4f.svg"
+    },
+    {
+      "id": "asset_sample_gem_sheet",
+      "name": "gema_animada_4f",
+      "filename": "gema_animada_4f.svg",
+      "mimeType": "image/svg+xml",
+      "kind": "image",
+      "width": 256,
+      "height": 64,
+      "path": "assets/asset_sample_gem_sheet_gema_animada_4f.svg"
+    },
+    {
+      "id": "asset_sample_tileset",
+      "name": "tileset_plataformas",
+      "filename": "tileset_plataformas.svg",
+      "mimeType": "image/svg+xml",
+      "kind": "image",
+      "width": 128,
+      "height": 64,
+      "path": "assets/asset_sample_tileset_tileset_plataformas.svg"
+    },
+    {
+      "id": "asset_sample_crate",
+      "name": "bloque_metal",
+      "filename": "bloque_metal.svg",
+      "mimeType": "image/svg+xml",
+      "kind": "image",
+      "width": 96,
+      "height": 96,
+      "path": "assets/asset_sample_crate_bloque_metal.svg"
+    },
+    {
+      "id": "asset_sample_drone",
+      "name": "dron_vigia",
+      "filename": "dron_vigia.svg",
+      "mimeType": "image/svg+xml",
+      "kind": "image",
+      "width": 80,
+      "height": 80,
+      "path": "assets/asset_sample_drone_dron_vigia.svg"
+    },
+    {
+      "id": "asset_ffb5be4debdb",
+      "name": "image_d30ab9ce-removebg-preview",
+      "filename": "image_d30ab9ce-removebg-preview.png",
+      "mimeType": "image/png",
+      "kind": "image",
+      "width": 677,
+      "height": 369,
+      "path": "assets/asset_ffb5be4debdb_image_d30ab9ce-removebg-preview.png"
+    },
+    {
+      "id": "asset_2f2e58a0494c",
+      "name": "image_8639c7a9-removebg-preview",
+      "filename": "image_8639c7a9-removebg-preview.png",
+      "mimeType": "image/png",
+      "kind": "image",
+      "width": 677,
+      "height": 369,
+      "path": "assets/asset_2f2e58a0494c_image_8639c7a9-removebg-preview.png"
+    },
+    {
+      "id": "asset_7369ff1d8d72",
+      "name": "image_d7daaa56-removebg-preview",
+      "filename": "image_d7daaa56-removebg-preview.png",
+      "mimeType": "image/png",
+      "kind": "image",
+      "width": 677,
+      "height": 369,
+      "path": "assets/asset_7369ff1d8d72_image_d7daaa56-removebg-preview.png"
+    },
+    {
+      "id": "asset_959a751b68b1",
+      "name": "image_ac8f189-removebg-preview",
+      "filename": "image_ac8f189-removebg-preview.png",
+      "mimeType": "image/png",
+      "kind": "image",
+      "width": 677,
+      "height": 369,
+      "path": "assets/asset_959a751b68b1_image_ac8f189-removebg-preview.png"
+    }
+  ]
+}

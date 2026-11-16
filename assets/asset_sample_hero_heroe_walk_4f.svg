@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="96" viewBox="0 0 384 96">
+      <!-- Frame 0: Reposo -->
+      <g transform="translate(0,0)">
+        <rect x="24" y="20" width="48" height="48" rx="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="4"/>
+        <rect x="30" y="30" width="36" height="18" rx="6" fill="#0f172a"/>
+        <circle cx="41" cy="39" r="3.5" fill="#38bdf8"/>
+        <circle cx="55" cy="39" r="3.5" fill="#38bdf8"/>
+        <rect x="34" y="68" width="10" height="18" rx="4" fill="#1d4ed8"/>
+        <rect x="52" y="68" width="10" height="18" rx="4" fill="#1d4ed8"/>
+        <path d="M40 20 L48 8 L56 20 Z" fill="#60a5fa"/>
+      </g>
+      <!-- Frame 1: Paso izquierdo -->
+      <g transform="translate(96,0)">
+        <rect x="24" y="17" width="48" height="48" rx="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="4"/>
+        <rect x="31" y="27" width="36" height="18" rx="6" fill="#0f172a"/>
+        <circle cx="42" cy="36" r="3.5" fill="#38bdf8"/>
+        <circle cx="56" cy="36" r="3.5" fill="#38bdf8"/>
+        <rect x="26" y="65" width="12" height="20" rx="4" fill="#2563eb" transform="rotate(18 32 65)"/>
+        <rect x="54" y="65" width="12" height="18" rx="4" fill="#1e40af" transform="rotate(-16 60 65)"/>
+        <path d="M40 17 L48 5 L56 17 Z" fill="#93c5fd"/>
+      </g>
+      <!-- Frame 2: Transición -->
+      <g transform="translate(192,0)">
+        <rect x="24" y="21" width="48" height="48" rx="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="4"/>
+        <rect x="30" y="31" width="36" height="18" rx="6" fill="#0f172a"/>
+        <circle cx="41" cy="40" r="3.5" fill="#38bdf8"/>
+        <circle cx="55" cy="40" r="3.5" fill="#38bdf8"/>
+        <rect x="38" y="68" width="10" height="17" rx="4" fill="#1d4ed8"/>
+        <rect x="50" y="68" width="10" height="17" rx="4" fill="#2563eb"/>
+        <path d="M40 21 L48 9 L56 21 Z" fill="#60a5fa"/>
+      </g>
+      <!-- Frame 3: Paso derecho -->
+      <g transform="translate(288,0)">
+        <rect x="24" y="17" width="48" height="48" rx="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="4"/>
+        <rect x="31" y="27" width="36" height="18" rx="6" fill="#0f172a"/>
+        <circle cx="42" cy="36" r="3.5" fill="#38bdf8"/>
+        <circle cx="56" cy="36" r="3.5" fill="#38bdf8"/>
+        <rect x="32" y="65" width="12" height="18" rx="4" fill="#1e40af" transform="rotate(-16 38 65)"/>
+        <rect x="56" y="65" width="12" height="20" rx="4" fill="#2563eb" transform="rotate(18 62 65)"/>
+        <path d="M40 17 L48 5 L56 17 Z" fill="#93c5fd"/>
+      </g>
+    </svg>
